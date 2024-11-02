@@ -12,8 +12,10 @@ const nav = document.getElementById("nav");
 // depending on nav element clcicked erase content and load in selected content
 nav.addEventListener("click", (e) => {
   const contentDiv = document.getElementById("content");
-  contentDiv.innerHTML = "";
   let target = e.target;
+  if (target.id != "nav") {
+    contentDiv.innerHTML = "";
+  }
   if (target.id === "home") {
     createHomeContent();
   }
